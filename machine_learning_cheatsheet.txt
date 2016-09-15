@@ -18,13 +18,13 @@ from patsy.highlevel import dmatrices
 from sklearn.cross_valication import train_test_split, cross_val_score
 from sklearn.linear model import LogisticRegression
 
-formula = "outcome ~ v1 + v2 + v3 + v4"
+formula = "outcome ~ v1 + v2 + v3 + v4"			# Can use : and * for interactions
+								# http://patsy.readthedocs.io/en/latest/formulas.html#the-formula-language
 y, X = dmatrices(formula, data=df, return_type='dataframe')
 
 lr = LogisticRegression()
-
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1,
-                                                    random_state=109)
+                                                    random_state=109)	# Takes & Returns Pandas DF
                                                     
 cross_val_score(lr, X_train, y_train['outcome[True]'], cv=10,
                 scoring='accuracy')
