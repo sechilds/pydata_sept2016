@@ -36,3 +36,12 @@ We are using the [Subway Delay Data](https://www1.toronto.ca/wps/portal/contento
 from the City of Toronto's Open Data Portal.
 
 The files we are looking at are included in this repository.
+
+## Presentation
+
+To run the presentation, use the command
+
+     jupyter nbconvert presentation.ipynb --to slides --post serve --reveal-prefix reveal.js-3.5.0
+
+The `--reveal-prefix` will give you speaker notes -- but you want to install the
+latest reveal.js version in that folder.
